@@ -1,0 +1,54 @@
+<%- include('../../../includes/adHeader')%>
+
+<div class="ui container">
+<h1>Table Voitures</h1>
+
+<a href='/getAddCar'>
+  <button class="ui button">
+    ajouter voiture
+  </button>
+</a>
+
+<% getallCars.forEach(function(item){ %>
+ 
+    <table class="ui compact celled table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Marque</th>
+            <th>Immatriculation</th>
+            <th>Prix au Jour</th>
+            <th>Prix Lundi-Vendredi</th>
+            <th>Prix Week-End</th>
+            <th>Prix Semaine</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>            
+            <td><img class='ui medium image' src='/img/<%=item.attachment%>'></td>
+            <td><%=item.marque%></td>
+            <td><%=item.immat%></td>
+            <td><%=item.pxDD%></td>
+            <td><%=item.pxLV%></td>
+            <td><%=item.pxWE%></td>
+            <td><%=item.pxWK%></td>
+          </tr>
+        </tbody>
+        <tfoot class="full-width">
+          <tr>
+            <th></th>
+            <th colspan="6">
+              <button type='submit'>
+                <a href='/getUpdateCar?id=<%= item.id %>'>update</a>
+              </button>
+              <button type='submit' method='delete'>
+                <a href='/deleteCar?id=<%= item.id %>'>delete</a>
+              </button>
+            </tr>
+        </tfoot>
+      </table>
+     
+<% }) %>
+
+
+<%- include('../../../includes/footer')%>

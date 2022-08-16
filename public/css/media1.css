@@ -1,0 +1,264 @@
+/* ----- HEADER ----- */
+    /* ----- DROPDOWN ----- */
+
+    @media screen and (max-width : 900px){
+        
+        
+
+    }
+
+    @media screen and (max-width : 600px){
+    
+        .user_dropdown{
+            display:flex !important;
+        }
+
+        .contact_menu{
+            display:none !important;
+        }
+
+    }
+
+/* ----- VIEW CARS ----- */
+
+    /* ----- RESPONSIVE CARD ----- */
+
+        @media screen and (max-width : 1100px){
+
+            .props_image2{
+                max-height: 300px;
+                min-height: 300px;
+            }
+
+            .fullcard{
+                    width: 100%;
+            }
+
+            #searchDivCars{
+                flex-direction: column;
+            }
+
+        }
+
+        @media screen and (max-width : 650px){
+        
+            .props_image2{
+                max-height: 150px;
+                min-height: 150px;
+            }
+
+            .available_cars_title{
+                width:400px;
+            }
+
+            .fullcard_title h2{
+                font-size:20px;
+            }
+
+            .order_button button{
+                 font-size:40px;
+                 bottom:10px;          
+            }
+
+        }
+
+        @media screen and (max-width : 500px){
+
+            .available_cars_title{
+                width:300px;
+            }
+        
+        }
+        
+        @media screen and (max-width : 450px){
+        
+            .props_image2{
+                max-height: 100px;
+                min-height: 100px;
+            }
+
+            .order_button a{
+                font-size: 20px;
+                bottom:0px;
+            }
+        
+            .arrow_button{
+                width:35px !important;
+                right:10px !important;
+            }
+        
+            #brand{
+                font-size:12px;
+            }
+        
+            .info_cars{
+                font-size:10px;
+            }
+        
+            .fullcard_title h2{
+                font-size:10px;
+            }
+
+            .fullcard_title h2{
+                font-size:12px;
+            }
+
+            /* Search Div */
+            #searchDivCars{
+                font-size:10px;
+            }
+
+        }
+
+        @media screen and (max-width : 400px){
+
+            .available_cars_title{
+                width:200px;
+            } 
+
+            .order_button button{
+                font-size:30px;
+                right:-5px;
+                bottom:0px;
+            }
+
+        }
+
+        @media screen and (max-width : 300px){
+
+            .date_hour_div{
+                flex-direction: column !important;
+            }
+
+        }
+
+/* ----- SOLO CAR ----- */
+
+        /* ----- RESPONSIVE NAVBAR ----- */
+        @media screen and (max-width:950px) {
+            nav li a{
+                font-size: 2em;
+            }
+        }
+
+    /* ----- RESPONSIVE DATE DIV ----- */
+
+        @media screen and (max-width : 950px){
+
+        }
+
+    /* ----- RESPONSIVE IMAGE ----- */
+
+        @media screen and(max-width : 950px){
+
+            .info_cars2{
+                justify-content: center;
+                text-align: center;
+            }
+
+        }
+
+    /* ----- RESPONSIVE TITLE ----- */
+
+        @media screen and (max-width:400px){
+
+            .solo_title h1{
+                font-size:22px;
+            }
+
+        }
+
+        @media screen and (min-width:400px) and (max-width : 500px){
+        
+            .solo_title h1{
+                font-size: 30px;
+            }
+
+        }
+
+        @media screen and (min-width :500px) and (max-width : 950px){
+
+            .solo_title h1{
+                font-size: 40px;
+            }
+        
+        }
+
+    /* ----- RESPONSIVE PRICE ----- */
+
+        @media screen and (max-width:500px) {
+        
+        }
+
+    /* OTHER RULES HOME SEARCH CAR */
+    
+    @media screen and (max-width : 1000px){
+
+        .searchForm{
+            /* display:flex;
+            flex-direction: column; */
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto auto;
+        }
+
+        .div_grid1{
+            grid-row-start:2 !important;
+            grid-column: 1, 2 !important;
+            align-items:center !important;
+        }
+
+        .div_grid2{
+            grid-row-start: 1 !important;
+            grid-column: 1, 2 !important;
+        }
+
+        .div_grid3{
+            grid-row-start: 3 !important;
+            grid-column: 1, 2 !important;
+        }
+
+        .img_car{
+            min-width:300px;
+        }
+
+        .submit_app{
+            display:none;
+        }
+
+        .submit_app2{
+            margin:20px;
+        }
+        .submit_app2 button{
+            display:inline-block !important;
+        }
+
+    }
+    
+    @media screen and (min-width: 500px) and (max-width : 1000px){
+    
+        .search_input{
+            width:400px;
+        }
+
+        .adress_input input{
+            width:400px;
+        }
+    
+    }
+
+    @media screen and (max-width : 650px){
+
+        .order_button a{
+            font-size: 40px;
+            bottom:20px;
+        }
+
+        .arrow_button{
+            width:50px;
+        }
+
+        .brand{
+            font-size:20px;
+        }
+
+    }

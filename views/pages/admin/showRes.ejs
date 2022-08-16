@@ -1,0 +1,59 @@
+<%- include('../../includes/adheader')%>
+<div class="ui container">
+
+<h1>Table Reservation</h1>
+<% getAllRes.forEach(function(item){ %>
+  <% getAllCar.map(function(car){ %>
+    <% getAllUsers.map(function(user){ %>
+      <% if (item.voitureId === car.id) { %>
+      <% if (item.utilisateurId === user.id) { %>
+
+<div class="ui container">
+    <table class="ui celled table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Voiture</th>
+            <th>Utilisateur</th>
+            <th>date Départ</th>
+            <th>date Retour</th>
+            <th>Prix</th>
+            <th>Adresse</th>
+            <th>Ville</th>
+            <th>Code postal</th>
+          </tr>
+        </thead>    
+        <tbody>
+          <tr>
+            <td><img id="imgAllRes" src="/img/<%=car.attachment%>"></td>
+            <td><%=car.marque%></td>
+            <td><%= user.nom %></td>
+            <td><%=item.dateDepart%></td>
+            <td><%=item.dateRetour%></td>
+            <td><%=item.price%>€</td>
+            <td><%=item.adresse%></td>
+            <td><%=item.ville%></td>
+            <td><%=item.cp%></td>
+          </tr>
+        </tbody>
+        <tfoot class="full-width">
+          <tr>
+            <th></th>
+            <th colspan="9">
+              <a href="/ResById?id=<%= item.id %>"><div class="ui right floated small primary labeled icon button">
+                 voir RESERVATION
+              </div></a>
+              <a href="/deleteRes?id=<%= item.id %>"><div class="ui small button">delete</div></a>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+        <% } %>
+      <% } %>
+    <% }) %>
+  <% }) %>
+<% }) %>
+
+<%- include('../../includes/footer')%>

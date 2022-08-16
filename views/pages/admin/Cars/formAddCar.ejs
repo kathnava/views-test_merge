@@ -1,0 +1,50 @@
+<%- include('../../../includes/adHeader')%>
+<div class="ui container">
+
+  <h1>Ajouter une voiture</h1>
+
+    <form class="ui form" action="/addcar" method="post" enctype="multipart/form-data">
+  <div class="field">
+    <label for="attachment">image </label>
+    <input type="file" name="attachment" >
+  </div>
+  <div class="field">
+    <label for="marque">marque </label>
+    <input type="text" name="marque" id="marque" required>
+  </div>
+  <div class="field">
+    <label for="immat">immat </label>
+    <input type="text" name="immat" id="immat" required>
+  </div>
+  <div class="field">
+    <label for="carburant">carburant </label>
+    <input type="text" name="carburant" id="carburant" required>
+  </div>
+  <div class="field">
+    <label for="am">am </label>
+    <input type="number" name="am" id="am" required>
+  </div>
+  <div class="field">
+    <label for="pxDD">pxDD </label>
+    <input type="number" name="pxDD" id="pxDD" required>
+  </div>
+  <div class="field">
+    <label for="pxLV">pxLV </label>
+    <input type="number" name="pxLV" id="pxLV" required>
+  </div>
+  <div class="field">
+    <label for="pxWE">pxWE </label>
+    <input type="number" name="pxWE" id="pxWE" required>
+  </div>
+  <div class="field">
+    <label for="pxWK">pxWK </label>
+      <input type="number" name="pxWK" id="pxWK" required>
+  </div>
+
+  <button class="ui button" type="submit">Submit</button>
+</form>
+</div>
+
+   
+
+<%- include('../../../includes/footer')%>

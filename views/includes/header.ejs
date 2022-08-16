@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LetsGoCar</title>
+        <!-- <link rel="stylesheet" type="text/css" href="../../css/semantic/semantic.min.css">  -->
+        <!-- <script src="../../css/semantic/semantic.min.js"></script> -->  
+        
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/style1.css">
+        <link rel="stylesheet" type="text/css" href="../../css/media1.css">   
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>     
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+    </head>
+
+    <!-- HEADER -->
+    <div id='header' class="page-header">
+        <nav>
+            <!-- LOGO -->
+            <img src="/logo.png" />
+
+            <!-- BASIC HEADER MENU -->
+            <ul class="contact_menu">
+                <li><a href="/">Accueil</a></li>
+                <p>-</p>
+                <li><a href="/allcar">Véhicules</a></li>
+                <p>-</p>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <% if (user.id) { %>
+                <!-- USER CONNECTED -->
+                <div class="ui multiple dropdown user_dropdown">
+
+                    <span class="text">Menu</span>
+                    <i class="caret down icon"></i>
+    
+                    <div class="menu">
+
+                        <div class="item">
+                            <a href="/">Accueil</a>
+                        </div>
+    
+                        <div class="item">
+                            <a href="/allcar">Véhicules</a>
+                        </div>
+                        
+                        <div class="item">
+                            <a href="/contact">Contact</a>
+                        </div>
+    
+                    </div>
+                     
+                </div>
+
+                <div class="item"><a href="/logout" onclick="return confirm('Êtes vous sûr ?')">Log out</a></div>
+
+            <% } else { %>
+                <!-- USER NOT CONNECTED -->
+
+                    <!-- DROPDOWN RESPONSIVE -->
+                    <div class="ui multiple dropdown user_dropdown">
+
+                    <span class="text">Menu</span>
+                    <i class="caret down icon"></i>
+    
+                    <div class="menu">
+    
+                        <div class="item">
+                            <a href="/">Accueil</a>
+                        </div>
+                                                
+                        <div class="item">
+                            <a href="/logUser">Connexion</a>
+                        </div>
+    
+                        <div class="item">
+                            <a href="/registerUser">Inscription</a>
+                        </div>
+    
+                        <div class="item">
+                            <a href="/allcar">Véhicules</a>
+                        </div>
+                        
+                        <div class="item">
+                            <a href="/contact">Contact</a>
+                        </div>
+    
+                    </div>
+                    </div>
+
+                    <!-- LOGIN/REGISTER BUTTONS -->
+                    <div>
+                    <a href="/logUser"><button class="ui button">Connexion</button></a>
+                    <a href="/registerUser"><button class="ui button">Inscription</button></a>
+                    </div>
+            <% } %>
+        </nav>
+    </div>
+    
+    <!-- BODY -->
+    <body class="page-body">
+        <main>

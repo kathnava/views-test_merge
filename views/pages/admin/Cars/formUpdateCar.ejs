@@ -1,0 +1,55 @@
+<%- include('../../../includes/adheader')%>
+
+
+<form class="ui form" method="post" action="/updateCar?id=<%= updateCar.id %>" enctype="application/x-www-form-urlencoded">
+  
+  <div class="field">
+    <label for="attachment">image </label>
+    <input type="file" name="attachment" value="<%= updateCar.attachment %>"  >
+  </div>
+
+  <div class="field">
+    <label for="marque">marque </label>
+    <input type="text" name="marque" value="<%= updateCar.marque %>" >
+  </div>
+
+  <div class="field">
+    <label for="immat">immat </label>
+    <input type="text" name="immat" value="<%= updateCar.immat %>" >
+  </div>
+
+  <div class="field">
+    <label for="carburant">carburant </label>
+    <input type="text" name="carburant" value="<%= updateCar.carburant %>">
+  </div>
+
+  <div class="field">
+    <label for="am">am </label>
+    <input type="number" name="am" value="<%= updateCar.am %>">   
+  </div>
+
+  <div class="field">
+    <label for="pxDD">pxDD </label>
+    <input type="number" name="pxDD" value="<%= updateCar.pxDD %>" >
+  </div>
+  
+  <div class="field">
+    <label for="pxLV">pxLV </label>
+    <input type="number" name="pxLV" value="<%= updateCar.pxLV %>" >
+  </div>
+
+  <div class="field">
+    <label for="pxWE">pxWE </label>
+    <input type="number" name="pxWE" value="<%= updateCar.pxWE %>"  >
+  </div>
+
+  <div class="field">
+    <label for="pxWK">pxWK </label>
+      <input type="number" name="pxWK" value="<%= updateCar.pxWK %>"  >
+  </div>
+
+  <button class="ui button" type="submit">submit</button>
+
+</form>
+
+<%- include('../../../includes/footer')%>

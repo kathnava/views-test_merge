@@ -1,0 +1,22 @@
+<%- include('../../includes/adHeader.ejs')%>
+
+<div class="ui container">
+    <h1>Connexion</h1>
+    <form class="ui form" method="POST" action="/logAdmin">
+
+        <div class="field">
+            <label>Nom d'administrateur</label>
+            <input type="text" name="username">
+        </div>
+
+        <div class="field">
+            <label>Mot de passe</label>
+            <input type="password" name="password">
+        </div>
+        
+        <button class="ui button" type="submit">Se Connecter</button>
+    </form>
+</div>
+
+
+<%- include('../../includes/footer.ejs')%>

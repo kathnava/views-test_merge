@@ -1,0 +1,83 @@
+<%- include('../../includes/header')%>
+
+<div class="fulldiv">
+
+    <div class="right_position red">
+        <img class="available_cars_title" src="../../../img/Tous nos véhicules disponible sur Créteil ou en livraison.png">
+    </div>
+
+    <div class="ui link cards all_cards">
+
+        <% allCars.forEach(function(item){ %>
+
+        <div class="fullcard">
+
+            <!-- IMAGE VOITURE -->
+        <% if(item.attachment && item.attachment !== null){ %>
+
+            <div class="image props_image">
+                <div class="props_image2">
+                    <img src="../../../img/<%= item.attachment %>">                 
+                </div>
+            </div>
+
+        <% } else { %>
+
+            <div class="image props_image">
+                <div class="props_image2">
+                    <img src="../../../img/932169-8ada8106c92b740ecc91ec53428da0b7885eb8e4.png">
+                </div>
+           </div>
+
+        <% } %>
+
+          <!-- MENU VOITURE -->
+          <div class="content info_cars">
+
+            <div>
+
+                <div class="header">
+                    <span class="brand" id="brand"><%= item.marque %></span>
+                </div>
+
+                <div class="meta">
+                    <% if(item.am = 1){ %>
+                        <span class="am">Automatique %></span>
+                    <% } else { %>
+                        <span class="am">Manuelle</span>
+                    <% } %>
+                </div>
+
+                <div class="description">
+                    Forfait jour : <span class="price"><%=item.pxDD%>€</span>
+                </div>
+
+            </div>
+
+            <div class="order_div">
+                
+                <div class="description order_button">
+                    <form action="/homeSearchCar?id=<%=item.id%>" method="post">
+                        <button type="submit">Réserver</button>
+                    </form>
+                </div>
+                <div>
+                    <img class="arrow_button" src="../../../img/Arrow 2.png">
+                </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <% }) %>
+
+    </div>
+
+</div>
+
+</body>
+
+<%- include('../../includes/footer')%>
+

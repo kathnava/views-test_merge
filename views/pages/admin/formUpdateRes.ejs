@@ -1,0 +1,48 @@
+<%- include('../../includes/adHeader') %>
+
+
+<form id='selectDate' class="ui form" method="post" action="/updateRes?id=<%= data.id %>">
+  
+  
+    <div class="field">
+      <label for="dateDepart">dateDepart </label>
+      <input type="datetime-local" name="dateDepart" id="dateDepart" value="<%= queryDepart %>" >
+    </div>
+  
+    <div class="field">
+      <label for="dateRetour">dateRetour </label>
+      <input type="datetime-local" name="dateRetour" id="dateRetour" value="<%= queryRetour %>" >
+    </div>
+  
+    <div class="field">
+      <label for="adresse">adresse </label>
+      <input type="text" name="adresse" value="<%= data.adresse %>">
+    </div>
+  
+    <div class="field">
+      <label for="ville">ville </label>
+      <input type="text" name="ville" value="<%= data.ville %>">   
+    </div>
+  
+    <div class="field">
+      <label for="cp">cp </label>
+      <input type="number" name="cp" value="<%= data.cp %>" >
+    </div>
+
+    <div class="field">
+      <p id='price'></p>
+      <input id='inputPrice' type="hidden" name="price" value="<%= data.price %>" >
+    </div>
+
+    <div class="field">
+      <p id='forfait'></p>
+      <input id='inputforfait' type="hidden" name="forfait" value="" >
+    </div>
+  
+    <button class="ui button" type="submit">submit</button>
+  
+  </form>
+
+  <script type="text/javascript"><%- include ('../../../utils/updateValidation.js') %></script>
+
+<%- include('../../includes/footer')%>

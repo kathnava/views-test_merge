@@ -1,0 +1,103 @@
+<%- include('../includes/header.ejs')%>
+
+<div id="searchDivCars3">
+
+    <form id="confirmForm" action="/createReservation?id=<%= user.id %>" method='post'>
+
+        <div class="div_grid1_2">
+
+            <!-- INFO FORFAIT -->
+            <div class="div1_2">
+                <span class="red"><%= resInfos.forfait %></span>
+            </div>
+
+            <!-- DATE DEPART -->
+            <div class="div1_2">
+
+                <div>
+                    <p class="confirm_label">Départ le : </p>
+                    <%= dateDepartmodif %>
+                </div>
+
+                <input type="hidden" value="<%= resInfos.dateDepart %>" name="dateDepart">
+
+            </div>
+
+            <!-- ADRESSE DEPART -->
+            <div class="div1_2">
+
+                    <div>
+                        <p class="confirm_label">De :</p>
+                        <%= resInfos.adresse %>
+                    </div>
+
+                    <div>
+                        <%= resInfos.cp %> 
+                        <%= resInfos.ville %>
+                    </div>
+
+            </div>
+
+            <!-- DATE RETOUR -->
+            <div class="div1_2">
+
+                <div>
+                    <p class="confirm_label">Retour le : </p>
+                    <%= dateRetourmodif %>
+                </div>
+
+                <input type="hidden" value="<%= resInfos.dateRetour %>" name="dateRetour">
+
+            </div>
+
+        </div>
+        
+        <div class="div_grid2_2">
+
+            <!-- INFO VOITURE -->
+            <div id="contentCarInformation" class="solo_title2">
+                <div id="carDivInformation">
+                    <h1> <%= voiture.marque %> - Récapitulatif</h1>
+                    <input type="hidden" value="<%= voiture.id %>" name="voiture">
+                </div>
+            </div>
+
+            <!-- IMAGE VOITURE -->
+            <div class="img_car2">
+                <img src="img/<%= voiture.attachment %>">
+            </div>
+
+            <!-- BOUTON SUBMIT -->
+            <div class="submit_app">
+                <button class="ui button" type="submit">Confirmer</button>
+            </div>
+
+        </div>
+
+        <div class="div_grid3_2">
+            <!-- PRIX -->
+            <div class="confirm_price">
+                <%= resInfos.price %> €
+                <input type="hidden" value="<%= resInfos.price %>" name="price">
+            </div>
+        </div>
+
+        <!-- HIDDEN INPUTS -->
+        <div>
+
+            <div>
+                    <input type="hidden" value="<%= resInfos.adresse %>" name="adresse">
+                    <input type="hidden" value="<%= resInfos.ville %>" name="ville">
+                    <input type="hidden" value="<%= resInfos.cp %>" name="cp">
+                    <input type="hidden" value="iduser" name="idUser">
+
+            </div>
+                
+        </div>
+
+    </form>
+
+</div>
+
+
+<%- include('../includes/footer.ejs')%>

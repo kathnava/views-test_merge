@@ -1,0 +1,45 @@
+<%- include('../includes/header.ejs')%>
+
+<div class="ui container">
+  <h1>Inscription</h1>
+  <form class="ui form" method="POST" action="/registerUser">
+    <div class="field required">
+      <label>Nom</label>
+      <input type="text" name="nom" placeholder="ex: DUPONT">
+    </div>
+    <div class="field">
+      <label>Prénom</label>
+      <input type="text" name="prenom" placeholder="ex: Jean">
+    </div>
+    <div class="field">
+      <label>Téléphone</label>
+      <input type="text" name="telephone" placeholder="0123456789">
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="text" name="email" placeholder="xxxxxxx@xxxxx.xx">
+    </div>
+    <div class="field">
+      <label>Mot de passe </label>
+      <input type="password" placeholder='1 Majuscule, 1 chiffre et minimum 8 caractères' name="password">
+    </div>
+    <div class="field">
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" name='mailcontact'>
+        <label>Je veux être contacter par mail.</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" name='telcontact'>
+        <label>Je veux être contacter par téléphone.</label>
+      </div>
+    </div>
+    <button class="ui button" type="submit">S'inscrire</button>
+  </form>
+</div>
+
+
+
+
+<%- include('../includes/footer.ejs')%>

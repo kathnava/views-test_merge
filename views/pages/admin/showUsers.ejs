@@ -1,0 +1,38 @@
+<%- include('../../includes/adheader')%>
+
+<h1>Table Utilisateurs</h1>
+  <div class="ui container">
+    <table class="ui celled table table_users">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Telephone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        
+        <% getAllUsers.forEach(function(item){ %>
+        <tbody>
+          <tr>
+            <td><%= item.id%></td>
+            <td><%= item.nom%></td>
+            <td><%= item.prenom%></td>
+            <td><%= item.telephone%></td>
+            <td><%= item.email%></td>
+            <td>
+              <button type='submit'>
+                <a href='/deleteUserId?id=<%= item.id%>' onClick= 'return confirm("Voulez-vous vraiment supprimer cet utilisateur ?")'>
+                  Supprimer l'utilisateur </a>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <% }) %>
+      </table>
+    
+      <a href="/getAdProfile"><button class="ui button">Retour</button></a>
+</div>
+
+<%- include('../../includes/footer')%>

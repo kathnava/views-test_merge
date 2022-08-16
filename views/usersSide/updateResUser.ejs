@@ -1,0 +1,45 @@
+<%- include('../includes/header.ejs')%>
+
+<div class="ui container">
+    <form id='selectDate' action="/updateResUser?id=<%= res.id %>" class="ui form" method="POST">
+
+        <div class="field">
+            <label for="dateDepart" class="ui label">Date de départ</label>
+            <input type="datetime-local" class="ui input" placeholder="" name="dateDepart" id="dateDepart" value="<%= queryDepart %>">
+        </div>
+
+        <div class="field">
+            <label for="dateDepart" class="ui label">Date de retour</label>
+            <input type="datetime-local" class="ui input" placeholder="" name="dateRetour" id="dateRetour" value="<%= queryRetour %>">
+        </div>
+        
+        <div class="field">
+            <label class=''>Adresse</label>
+            <input type="text" name="adresse" value='<%= res.adresse %>'>
+        </div>
+        <div class="field">
+            <label class=''>Ville</label>
+            <input type="text" name="ville" value='<%= res.ville %>'>
+        </div>
+        <div class="field">
+            <label class=''>Code Postal</label>
+            <input type="text" name="cp" value='<%= res.cp %>'>
+        </div>
+
+        <div class="field">
+            <p id='price'></p>
+            <input id='inputPrice' type="hidden" name="price" value='<%= res.price %>'>
+        </div>
+        <div class="field">
+            <p id='forfait'></p>
+            <input id="inputForfait" type="hidden" name="forfait" value=''>
+        </div>
+
+        <button class="ui button" type="submit">Modifier</button>
+
+    </form>
+</div>
+
+<script type="text/javascript"><%- include ('../../utils/searchValidation.js') %></script>
+
+<%- include('../includes/footer.ejs')%>

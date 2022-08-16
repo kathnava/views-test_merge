@@ -1,0 +1,26 @@
+<%- include('../../includes/adHeader.ejs')%>
+
+<div class="ui container">
+    <h1>Inscription</h1>
+    <form class="ui form" method="POST" action="/adminRegister">
+
+        <div class="field">
+            <label>admin</label>
+            <input type="text" name="username" placeholder="admin">
+        </div>
+
+        <div class="field">
+            <label>Mot de passe</label>
+            <input type="text" name="password1">
+        </div>
+        <div class="field">
+            <label>Vérification Mot de passe</label>
+            <input type="text" name="password2">
+        </div>
+        
+        <button class="ui button" type="submit">Enregistrer</button>
+    </form>
+</div>
+
+
+<%- include('../../includes/footer.ejs')%>

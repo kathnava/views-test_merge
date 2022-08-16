@@ -1,0 +1,51 @@
+<%- include('../includes/header.ejs')%>
+
+<div class="ui container">
+
+<h1>Bonjour <%= user.prenom %></h1>
+
+<h3>Mes informations</h3>
+<p><%= user.prenom %> <%= user.nom %></p>
+<p><%= user.email %></p>
+<p><%= user.telephone %></p>
+
+<a href="/updateUser"><button class="ui button">Modifier mes informations</button></a>
+
+<h1>Mes Réservations</h1>
+
+<table class="ui celled table">
+    <thead>
+      <tr><th>Voiture</th>
+      <th>Date départ</th>
+      <th>Date Retour</th>
+      <th>Adresse</th>
+      <th>Ville</th>
+      <th>Code postal</th>
+      <th>Prix</th>
+      <th id='th_res_profile'></th>
+      
+    </tr></thead>
+    <% allRes.forEach(function(res){ %>
+        <% allCars.map(function(car){ %>
+            <% if (res.voitureId === car.id) { %>
+    <tbody>
+      <tr> 
+        <td data-label="Voiture"><%= car.marque %></td>
+        <td data-label="Date départ"><%= res.dateDepart %></td>
+        <td data-label="Date Retour"><%= res.dateRetour %></td>
+        <td data-label="Adresse"><%= res.adresse %></td>
+        <td data-label="Ville"><%= res.ville %></td>
+        <td data-label="code-postal"><%= res.cp %></td>
+        <td data-label="Prix"><%= res.price %> €</td>
+        <td><a href="/updateResUser?id=<%= res.id %>"><button class="ui button">Modifier ma réservation</button></a></td>
+        <td><a href="/deleteResUser?id=<%= res.id %>" onclick="return confirm('Voulez vous vraiment effacer cette réservation ?')"><button class="ui button">Effacer</button></a></td>
+      </tr>
+    </tbody>
+            <% } %>
+        <% }) %>
+    <% }) %>
+  </table>
+
+</div>
+
+<%- include('../includes/footer.ejs')%>

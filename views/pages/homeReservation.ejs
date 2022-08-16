@@ -1,0 +1,172 @@
+<%- include('../includes/header.ejs')%>
+
+<div id="searchDivCars2">
+
+    <!-- FORM PAGE -->
+    <form id="searchForm" class="searchForm" action="/confirmReservation?id=<%= user.id %>" method='get'>
+
+            <div class="div_grid1">
+
+                    <!-- ADRESSE -->
+                    <div class="search_input"> 
+                        <div class="radio">
+                            <input type="radio" name="adress" id="adress_radio1" value="1" checked>
+                            <label class="white" for="adress_radio1">Partir de l'agence de Créteil</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="adress" id="adress_radio2" value="2">
+                            <label class="white" for="adress_radio2">Partir d'une autre adresse :</label>
+                        </div>
+                        <div class="adress_input">
+
+                            <div>
+                                <input type="text" name="adresse" placeholder="Entrez votre adresse" id="adress_text1" required>
+                            </div>
+
+                            <div class="relative_citydiv">
+                                <input type="text" name="ville" placeholder="Entrez votre ville" id="citySearch" autocomplete="off" required>
+                                <div id="cityList"></div>
+                            </div>
+
+                            <div>
+                                <input type="text" name="cp" placeholder="Entrez votre code postal" id="adress_postal" maxlength="5" required>
+                            </div>
+                            
+                        </div>
+                    
+                    </div>
+
+                    <!-- DATES DE RESERVATION -->
+                    <div class="date_input">
+
+                    <div>
+
+                        <span class="white">Du :</span>
+
+                        <div class="date_hour_div">
+
+                            <div class="ui right labeled input border_input border_bottom">
+                                <input type="datetime-local" class="ui input" value="<%= qDepart %>" placeholder="" name="dateDepart" id="dateDepart" required>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <span class="white">Au :</span>
+                        <div class="date_hour_div">
+                            <div class="ui right labeled input border_input border_bottom">
+                                <input type="datetime-local" class="ui input" value="<%= qRetour %>" placeholder="" name="dateRetour" id="dateRetour" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="selectDate"></div>
+                    </div>
+            </div>
+
+            <div class="div_grid2">
+                <!-- TITRE PAGE -->
+                <div class="solo_title">
+                    <div>
+                        <h1 class="white"><%= voiture.marque%> - Réservation</h1>
+                    </div>
+                </div>
+
+                <!-- IMAGE VOITURE -->
+                <div> 
+                    <% if(voiture.attachment && voiture.attachment !== null){ %>
+            
+                        <div>
+            
+                            <div class="image img_car">
+                                <img src="../../../img/<%= voiture.attachment %>">
+                            </div>
+            
+                        </div>
+            
+                        
+                    <% } else { %>
+            
+                        <div>
+                            <div class="image voiture_img">
+                                <img src="../../../img/932169-8ada8106c92b740ecc91ec53428da0b7885eb8e4.png">
+                            </div>
+                        </div>
+            
+                    <% } %>
+                </div>
+
+                <!-- BOUTON SUBMIT-->
+                <div class="submit_app">
+                    <button type="submit" class="ui button">Continuer</button>
+                </div>
+            </div>
+
+            <div class="div_grid3">
+
+                <!-- FORFAITS -->
+                <div class="packages"> 
+
+                    <div class="meta">
+                        <% if(am = 1){ %>
+                            <span>Automatique %></span>
+                        <% } else{ %>
+                            <span>Manuelle</span>
+                        <% } %>
+                    </div>
+
+                    <div class="content white info_cars2">
+
+                        <table class="package_table">
+
+                            <thead>
+                                <tr class="package_table2">
+                                    <td>Jour</td>
+                                    <td>Lun-Ven</td>
+                                    <td>Week-End</td>
+                                    <td>Semaine</td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="package_table2">
+                                    <td><%= voiture.pxDD %>€</td>
+                                    <td><%= voiture.pxLV %>€</td>
+                                    <td><%= voiture.pxWE %>€</td>
+                                    <td><%= voiture.pxWK %>€</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <!-- AFFICHAGE PRIX -->
+                <div id="priceContainer">
+                    <div id="priceDiv" class="white">
+                            <p id="price">-</p>
+                            <p id="forfait"></p>
+                            <input type="hidden" value="" name="price" id="inputPrice">
+                            <input type="hidden" value="" name="forfait" id="inputForfait">
+                    </div>
+                </div>
+                <!-- BOUTON SUBMIT-->
+                <div class="submit_app2">
+                    <button type="submit" class="ui button">Continuer</button>
+                </div>
+
+            </div>
+
+            <input type="hidden" value="<%= voiture.id %>" name="voiture">
+
+    </form>
+
+</div>
+
+<script type="text/javascript" src="citySuggest.js"></script>
+<script type="text/javascript"><%- include ('../../utils/searchValidation.js') %></script>
+
+<%- include('../includes/footer.ejs')%>

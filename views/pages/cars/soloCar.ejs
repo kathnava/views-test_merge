@@ -1,0 +1,131 @@
+<%- include('../../includes/header')%>
+
+<div>
+
+    <div>
+        <a href="/viewCars"><i class="angle left icon"></i> Retour</a>
+    </div>
+
+    <div class="solo_title">
+        <div>
+            <h1 class="white"><%= soloCar.marque%> - Réservation</h1>
+        </div>
+    </div>
+
+    <div>
+        <% if(soloCar.attachment && soloCar.attachment !== null){ %>
+
+            <div>
+                <div class="image solocar_img">
+                    <img src="../../../img/<%= soloCar.attachment %>">
+                </div>
+            </div>
+
+        <% } else { %>
+
+            <div>
+                <div class="image solocar_img">
+                    <img src="../../../img/932169-8ada8106c92b740ecc91ec53428da0b7885eb8e4.png">
+                </div>
+            </div>
+
+        <% } %>
+
+        <div class="content white info_cars2">
+
+            <div class="header">
+                <span class="brand"><%= soloCar.marque %></span>
+            </div>
+
+            <div class="meta">
+                <% if(am = 1){ %>
+                <span class="am">Automatique %></span>
+                <% } else{ %>
+                <span class="am">Manuelle</span>
+                <% } %>
+            </div>
+
+            <div class="description">
+                Forfait Jour : <span class="price"><%= soloCar.pxDD %>€</span>
+            </div>
+
+            <div class="description">
+                Forfait Lundi-Vendredi : <span class="price"><%= soloCar.pxLV %>€</span>
+            </div>
+
+            <div class="description">
+                Forfait Week-End : <span class="price"><%= soloCar.pxWE %>€</span>
+            </div>
+
+            <div class="description">
+                Forfait Semaine : <span class="price"><%= soloCar.pxWK %>€</span>
+            </div>
+
+        </div>
+
+        <form>
+            <div id="searchDivCars2">
+
+                <div class="search_input">
+
+                    <div>
+
+                        <span class="red">Du :</span>
+
+                        <div class="date_hour_div2">
+
+                            <div class="ui right labeled input border_input">
+                                <input type="date" class="ui input" placeholder="" name="dateDepart3">
+                            </div>
+
+                            <div class="border_input">
+                                <input type="time" class="ui input" placeholder="" name="heureDepart3">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <div>
+
+                            <span class="red">Au :</span>
+
+                            <div class="date_hour_div2">
+
+                                <div class="ui right labeled input border_input">
+                                    <input type="date" class="ui input" placeholder="" name="dateRetour3">
+                                </div>
+
+                                <div class="border_input">
+                                    <input type="time" class="ui input" placeholder="" name="heureRetour3">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="search_input">
+                    <div class="ui button submit_button"><a href="/adressCar?id=<%soloCar.id%>">Continuer</a></div>
+                </div>
+
+                <div class="search_input1">
+
+                    <div class="price_border">
+                        <div class="fluent_price">380 €</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+    
+    </div>
+
+<%- include('../../includes/footer')%>

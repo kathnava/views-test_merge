@@ -1,0 +1,22 @@
+<%- include('../includes/header.ejs')%>
+
+<div class="ui container">
+    <h1>Connexion</h1>
+    <form class="ui form" method="POST" action="/logUser">
+
+        <div class="field">
+            <label>Email</label>
+            <input type="text" name="email" placeholder="xxxxx@xxxxx.xxx">
+        </div>
+
+        <div class="field">
+            <label>Mot de passe</label>
+            <input type="password" placeholder='1 Majuscule, 1 chiffre et minimum 8 caractères' name="password">
+        </div>
+        
+        <button class="ui button" type="submit">Se Connecter</button>
+    </form>
+</div>
+
+
+<%- include('../includes/footer.ejs')%>

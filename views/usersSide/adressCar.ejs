@@ -1,0 +1,119 @@
+<%- include('../includes/header')%>
+<form method="POST" action="/adressCar">
+<div class="grid_division">
+
+    <div class="adressCar_title2">
+        <div>
+            <h1 class="white"><%= adressCar.marque%> - Réservation</h1>
+        </div>
+    </div>
+
+    <div class="adressCar_img3">
+        <% if(adressCar.attachment && adressCar.attachment !== null){ %>
+
+            <div>
+                <div class="image adressCar_img">
+                    <img src="../../../img/<%= adressCar.attachment %>">
+                </div>
+            </div>
+
+        <% } else { %>
+
+            <div>
+                <div class="image adressCar_img">
+                    <img src="../../../img/932169-8ada8106c92b740ecc91ec53428da0b7885eb8e4.png">
+                </div>
+            </div>
+
+        <% } %>
+    </div>
+
+    <div class="grid_division1">
+
+        <div class="adress_settings">
+            
+            <div class="radio">
+                <input type="radio" name="adress" id="adress_radio1" checked>
+                <label class="white" for="adress_radio1">Partir de l'agence de Créteil</label>
+            </div>
+
+            <div class="radio">
+                <input type="radio" name="adress" id="adress_radio2">
+                <label class="white" for="adress_radio2">Partir d'une autre adresse :</label>
+            </div>
+
+            <div>
+                <div class="white">N° rue</div>
+                <div>
+                    <input type="text" class="adress_input" id="adress_street">
+                </div>
+            </div>
+
+            <div class="adress1">
+                <label class="white">Adresse 1</label>
+                <input type="text" class="adress_input2" placeholder="Rue de Clignancourt" id="adress_text1">
+                <input type="text" class="adress_input2" id="adress_text2">
+            </div>
+
+            <div class="adress1">
+                <label class="white">Ville / Code Postal</label>
+                <input type="text" class="adress_input3" placeholder="Créteil - 94000" id="adress_postal">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="grid_division2">
+
+        <div class="adressCar_title">
+            <div>
+                <h1 class="white"><%= adressCar.marque%> - Réservation</h1>
+            </div>
+        </div>
+
+        <div class="price_border4">
+            <div class="fluent_price2">
+                <p>380 €</p>
+            </div>
+        </div>
+
+        <div class="adressCar_img2">
+            <% if(adressCar.attachment && adressCar.attachment !== null){ %>
+    
+                <div>
+                    <div class="image adressCar_img">
+                        <img src="../../../img/<%= adressCar.attachment %>">
+                    </div>
+                </div>
+    
+            <% } else { %>
+    
+                <div>
+                    <div class="image adressCar_img">
+                        <img src="../../../img/932169-8ada8106c92b740ecc91ec53428da0b7885eb8e4.png">
+                    </div>
+                </div>
+    
+            <% } %>
+        </div>
+
+        <div>
+            <div class="ui button submit_button2"><a href="#">Continuer</a></div>
+        </div>
+
+    </div>
+    
+    <div class="grid_division3">
+
+        <div class="price_border3">
+            <div class="fluent_price2">
+                <p>380 €</p>
+            </div>
+        </div>
+
+    </div>
+    
+</div>
+</form>
+<%- include('../includes/footer')%>

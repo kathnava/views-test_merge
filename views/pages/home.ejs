@@ -1,0 +1,51 @@
+<%- include('../includes/header.ejs')%>
+
+<!-- HOME TITLE -->
+<div>
+    <img src="/slogan1.png" id="slogan1"/>
+</div>
+
+
+<!-- HOME FORM -->
+<form id="searchForm" action="/homeSearchCar" method='post'>
+    <div id="searchDiv">
+        
+        <!-- CAR CHOICE INPUT -->
+        <div class="ui right labeled input">
+            <label for="adress" class="ui label">1</label>
+            <select name="voiture" class="ui compact selection dropdown" required>
+
+                <option selected="" value="0">Votre voiture</option>
+
+                <% getAllCar.forEach(function(car){ %>
+                    <option value="<%=car.id%>"><%=car.marque%></option>
+                <% }) %>
+                
+            </select>
+        </div>
+
+        <!-- DATE START INPUT -->
+        <div>
+            <div class="ui right labeled input">
+                <label for="dateDepart" class="ui label">2</label>
+                <input type="datetime-local" class="ui input" placeholder="" name="dateDepart" id="dateDepart" required>
+            </div>
+        </div>
+
+        <!-- DATE ARRIVAL INPUT -->
+        <div>
+            <div class="ui right labeled input">
+                <input type="datetime-local" class="ui input" placeholder="" name="dateRetour" id="dateRetour" required>
+            </div>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button class="ui red button" type="submit">Rechercher</button>
+
+    </div>
+</form>
+
+
+<script type="text/javascript" src="homeSearchValidation.js"></script>
+
+<%- include('../includes/footer.ejs')%>
